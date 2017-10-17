@@ -11,6 +11,9 @@
 	"homepage" : "https://www.senbyte.com",
 	"extra" : {
 		"oxideshop" : {
+			"blacklist-filter": [
+                "Installationsanleitung.pdf"
+            ],
 			"target-directory" : "senbyte/ratenkaufbyeasycredit"
 		}
 	},
