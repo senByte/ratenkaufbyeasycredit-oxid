@@ -1,5 +1,5 @@
 {
-	"name" : "senByte/ratenkaufbyeasycredit-oxid",
+	"name" : "senbyte/ratenkaufbyeasycredit-oxid",
 	"description" : "Zahlart ratenkauf by easyCredit für Oxid eShop ab Version 6",
 	"type" : "oxideshop-module",
 	"keywords" : [
@@ -11,12 +11,12 @@
 	"homepage" : "https://www.senbyte.com",
 	"extra" : {
 		"oxideshop" : {
-			"target-directory" : "senByte/ratenkaufbyeasycredit"
+			"target-directory" : "senbyte/ratenkaufbyeasycredit"
 		}
 	},
-	"autoload": {
-        "psr-4": {
-            "SenByte\\EasyCredit\\": "../../../source/modules/senByte/ratenkaufbyeasycredit"
-        }
-    }
+	"autoload" : {
+		"psr-4" : {
+			"SenByte\\EasyCredit\\" : "../../../source/modules/senbyte/ratenkaufbyeasycredit"
+		}
+	}
 }

@@ -22,8 +22,8 @@ $aModule = array(
         'easycredit_update' => SenByte\EasyCredit\Application\Controllers\EasyCreditUpdate::class,
     ),
     'templates' => array(
-        'ec_checkout_select_payment.tpl' => 'senByte/ratenkaufbyeasycredit/views/checkout/ec_checkout_select_payment.tpl',
-        'ec_checkout_option_details.tpl' => 'senByte/ratenkaufbyeasycredit/views/checkout/ec_checkout_option_details.tpl',
+        'ec_checkout_select_payment.tpl' => 'senbyte/ratenkaufbyeasycredit/views/checkout/ec_checkout_select_payment.tpl',
+        'ec_checkout_option_details.tpl' => 'senbyte/ratenkaufbyeasycredit/views/checkout/ec_checkout_option_details.tpl',
     ),
     'extend' => array(
         \OxidEsales\Eshop\Application\Controller\PaymentController::class => SenByte\EasyCredit\Application\Controllers\EasyCreditPaymentController::class,
