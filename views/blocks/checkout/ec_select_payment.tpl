@@ -1,0 +1,5 @@
+[{if $sPaymentID == "easycredit"}]
+    [{include file="ec_checkout_select_payment.tpl"}]
+[{else}]
+    [{$smarty.block.parent}]
+[{/if}]

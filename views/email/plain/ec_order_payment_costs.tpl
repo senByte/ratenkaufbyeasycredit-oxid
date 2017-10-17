@@ -1,0 +1,5 @@
+[{assign var="paymentCost" value=$basket->getPaymentCosts()}]
+[{if $basket->getPaymentId() == "easycredit"}]
+[{if $basket->getPaymentCosts() >= 0}][{ oxmultilang ident="EMAIL_ORDER_CUST_HTML_PAYMENTCHARGEDISCOUNT1" }][{else}][{ oxmultilang ident="EMAIL_ORDER_CUST_HTML_PAYMENTCHARGEDISCOUNT2" }][{/if}] [{ oxmultilang ident="EMAIL_ORDER_CUST_HTML_PAYMENTCHARGEDISCOUNT3" }] [{ $basket->getFPaymentCosts() }] [{ $currency->name}]
+[{else}][{$smarty.block.parent}]
+[{/if}]
