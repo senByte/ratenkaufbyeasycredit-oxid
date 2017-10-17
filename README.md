@@ -4,4 +4,4 @@
 #### freigegebene Oxid eSales Shop-Versionen
 - ab Version 6.0.0 RC2
 
-#### Hier finden Sie die [Installationsanleitung](Installationshandbuch.pdf).
+#### Hier finden Sie die [Installationsanleitung](Installationsanleitung.pdf).
