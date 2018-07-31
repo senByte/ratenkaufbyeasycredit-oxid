@@ -77,5 +77,18 @@ class EasyCreditViewConfig extends EasyCreditViewConfig_parent
 
         return null;
     }
+    
+    /**
+     *
+     * @return string|NULL
+     */
+    public function getContractURL() {
+        try {
+            return OxidEasycreditProcess::getInstance()->getCommonProcessData()->getCommonProcessData()->getContractInfoURL();
+        } catch (\Exception $e) {
+        }
+    
+        return null;
+    }
 
 }

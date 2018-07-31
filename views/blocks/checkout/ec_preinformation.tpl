@@ -10,7 +10,7 @@
         <p>[{$oViewConf->getRepaymentPlanText()}]</p>
 
         <p class="agb">
-            <a target="_blank" href="https://ratenkauf.easycredit.de/ratenkauf/content/intern/vorvertraglicheInformationen.jsf?vorgangskennung=[{$oViewConf->getTbaId()}]">[{ oxmultilang ident="MODULE_PAYMENT_EASYCREDIT_TEXT_PRE_INFORMATION" }]</a>
+            <a target="_blank" href="[{$oViewConf->getContractURL()}]">[{ oxmultilang ident="MODULE_PAYMENT_EASYCREDIT_TEXT_PRE_INFORMATION" }]</a>
         </p>
     </div>
 [{/if}]
