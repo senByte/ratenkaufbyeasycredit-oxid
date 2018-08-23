@@ -29,9 +29,25 @@ class EasyCreditOrder extends EasyCreditOrder_parent
             $ec = EasyCredit::getInstance();
             $ecProcess = $ec->getProcess();
             if ($iRet == 1) {
+                $this->setPaymentInfo($ecProcess->getProcessData()->getTechnicalTbaId());
                 $ecProcess->destroy();
             }
         }
         return $iRet;
+    }
+    
+    /**
+     * sets technical TBA ID to order
+     *
+     * @param string $technicalTbaId
+     */
+    protected function setPaymentInfo($technicalTbaId)
+    {
+        $db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
+    
+        $query = 'update oxorder set oxtransid=' . $db->quote($technicalTbaId) . ' where oxid=' . $db->quote($this->getId());
+        $db->execute($query);
+    
+        $this->oxorder__oxtransid = new \OxidEsales\Eshop\Core\Field($technicalTbaId);
     }
 }

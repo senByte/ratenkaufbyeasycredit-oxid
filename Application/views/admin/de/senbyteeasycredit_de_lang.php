@@ -20,4 +20,5 @@ $aLang = array(
     'SHOP_MODULE_EASYCREDIT_PROXY_PORT' => 'Proxy Port',
     'SHOP_MODULE_EASYCREDIT_PROXY_USERNAME' => 'Proxy Username',
     'SHOP_MODULE_EASYCREDIT_PROXY_PASSWORD' => 'Proxy Password',
+    'EASYCREDIT_TECHNICAL_TBA_ID' => 'Vorgangsnummer',
 );

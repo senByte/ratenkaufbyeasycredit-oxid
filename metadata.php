@@ -13,7 +13,7 @@ $aModule = array(
     'id' => 'easycredit',
     'title' => 'ratenkauf by easyCredit',
     'description' => 'Modul zur Integration der Zahlart ratenkauf by easyCredit',
-    'version' => '2.0.2',
+    'version' => '2.0.3',
     'author' => 'senByte UG',
     'thumbnail' => 'thumb.png',
     'url' => 'https://www.easycredit.de/ratenkaufpartner',
@@ -129,6 +129,11 @@ $aModule = array(
             'template' => 'email/plain/order_owner.tpl',
             'block' => 'email_plain_order_ownerpaymentinfo',
             'file' => 'views/email/plain/order_owner.tpl',
+        ),
+        array(
+            'template' => 'order_overview.tpl',
+            'block' => 'admin_order_overview_checkout',
+            'file' => 'views/blocks/admin/ec_order_overview.tpl'
         ),
     ),
     'events' => array(
