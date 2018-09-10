@@ -92,26 +92,28 @@ class EasyCreditPaymentController extends EasyCreditPaymentController_parent
     {
         if ($this->dynValues === null) {
             $this->dynValues = array();
+            if (\EasyCredit\Config::isValidOrderAmount($this->getOrderTotal())) {
 
-            $modelCalculation = $this->ecProcess->getModelCalculation();
-            $status = $this->ecProcess->getProcessData()->getStatus();
-
-            $consent = $this->ecProcess->getLegislativeText()->getDataProcessingPaymentPage();
-            
-            $this->dynValues['is_active'] = true;
-            $this->dynValues['declined'] = ($status === \EasyCredit\Process\Status::DECLINED);
-            $this->dynValues['consent'] = $consent;
-
-            $this->dynValues['installmentPlans'] = array_reverse($modelCalculation->getResults()->toArray());
-            $this->dynValues['representativeExample'] = $modelCalculation->getRepresentativeExample();
-
-            $this->dynValues['bestRate'] = OxidFacade::formatCurrency($this->bestRate);
-            $this->dynValues['order_amount'] = $this->getOrderTotal();
-            $this->dynValues['show_mobilephone_verify'] = false;
-
-            $this->dynValues['errors'] = $this->ecProcess->getProcessData()->getMessages();
-            if (isset($this->dynValues['errors']['MobilfunknummerValidierenActivity.Errors.KEINE_MOBILFUNKNUMMER'])) {
-                $this->dynValues['show_mobilephone_verify'] = true;
+                $modelCalculation = $this->ecProcess->getModelCalculation();
+                $status = $this->ecProcess->getProcessData()->getStatus();
+    
+                $consent = $this->ecProcess->getLegislativeText()->getDataProcessingPaymentPage();
+                
+                $this->dynValues['is_active'] = true;
+                $this->dynValues['declined'] = ($status === \EasyCredit\Process\Status::DECLINED);
+                $this->dynValues['consent'] = $consent;
+    
+                $this->dynValues['installmentPlans'] = array_reverse($modelCalculation->getResults()->toArray());
+                $this->dynValues['representativeExample'] = $modelCalculation->getRepresentativeExample();
+    
+                $this->dynValues['bestRate'] = OxidFacade::formatCurrency($this->bestRate);
+                $this->dynValues['order_amount'] = $this->getOrderTotal();
+                $this->dynValues['show_mobilephone_verify'] = false;
+    
+                $this->dynValues['errors'] = $this->ecProcess->getProcessData()->getMessages();
+                if (isset($this->dynValues['errors']['MobilfunknummerValidierenActivity.Errors.KEINE_MOBILFUNKNUMMER'])) {
+                    $this->dynValues['show_mobilephone_verify'] = true;
+                }
             }
         }
 
